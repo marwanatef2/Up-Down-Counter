@@ -7,6 +7,10 @@ void SystemInit() {}
 
 int main()
 {
+	PortA_init();
+	PortC_init();
+	PortF_init();
+	
 	// start with 7-segments displaying "0"
 	GPIO_PORTA_DATA_R &= ~(0x0F << 2);
 	GPIO_PORTC_DATA_R &= ~(0x0F << 4);
@@ -46,7 +50,7 @@ int main()
 		if ((GPIO_PORTA_DATA_R&0x80) == 0x80)
 		{
 			//if 1st 7-segment became "0" decrement the next 7-segment
-			if ((GPIO_PORTA_DATA_R&0x3C) == (~0x0F << 2))
+			if ((GPIO_PORTA_DATA_R&0x3C) == 0)
 			{
 				GPIO_PORTC_DATA_R -= (1<<4);
 			}

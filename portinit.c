@@ -3,7 +3,9 @@
 
 void PortA_init (void)
 {
+	int x;
 	SYSCTL_RCGCGPIO_R |= 0x01;
+	x=0; // for delay purposes
 	GPIO_PORTA_DIR_R |= 0x3C ;
 	GPIO_PORTA_AFSEL_R = 0;
 	GPIO_PORTA_PCTL_R = 0;
@@ -15,7 +17,9 @@ void PortA_init (void)
 
 void PortC_init (void)
 {
+	int x;
 	SYSCTL_RCGCGPIO_R |= 0x04;
+	x=0; // for delay purposes
 	GPIO_PORTC_DIR_R |= 0xF0;
 	GPIO_PORTC_AFSEL_R = 0;
 	GPIO_PORTC_PCTL_R = 0;
@@ -27,7 +31,9 @@ void PortC_init (void)
 
 void PortF_init (void)
 {
+	int x;
 	SYSCTL_RCGCGPIO_R |= 0x20;
+	x=0; // for delay purposes
 	GPIO_PORTF_DIR_R &= ~0x10;
 	GPIO_PORTF_AFSEL_R = 0;
 	GPIO_PORTF_PCTL_R = 0;
