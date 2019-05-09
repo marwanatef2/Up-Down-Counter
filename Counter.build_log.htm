@@ -11,10 +11,18 @@ Build target 'Target 1'
 compiling main.c...
 systick.h(15): warning:  #1-D: last line of file ends without a newline
   #endif
-main.c(12): warning:  #1-D: last line of file ends without a newline
-  }
-main.c: 2 warnings, 0 errors
+main.c: 1 warning, 0 errors
 linking...
 Program Size: Code=540 RO-data=636 RW-data=0 ZI-data=608  
 FromELF: creating hex file...
-".\Counter.axf" - 0 Error(s), 2 Warning(s).
+".\Counter.axf" - 0 Error(s), 1 Warning(s).
+e ends without a newline
+  #endif 
+portinit.c: 1 warning, 0 errors
+linking...
+.\Counter.axf: Error: L6200E: Symbol PortA_init multiply defined (by portinit.o and main.o).
+Not enough information to list image symbols.
+Not enough information to list the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+".\Counter.axf" - 1 Error(s), 3 Warning(s).
+Target not created

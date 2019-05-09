@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include "systick.h"
 
-void SystemInit()
-{}
+void SystemInit() {}
+	
+
 
 int main()
 {
@@ -10,3 +11,4 @@ int main()
 	
 	return 0;
 }
+
