@@ -20,4 +20,3 @@ void delay_milliseconds (unsigned long int msecs)
 	while (msecs--)
 		systick_delay();
 }
-

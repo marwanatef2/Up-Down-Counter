@@ -8,21 +8,26 @@ Project File Date:  05/08/2019
 
 <h2>Output:</h2>
 Build target 'Target 1'
-compiling main.c...
-systick.h(15): warning:  #1-D: last line of file ends without a newline
-  #endif
-main.c: 1 warning, 0 errors
+compiling portinit.c...
+portinit.h(45): warning:  #1-D: last line of file ends without a newline
+  #endif 
+portinit.c(39): warning:  #1-D: last line of file ends without a newline
+  }
+portinit.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=540 RO-data=636 RW-data=0 ZI-data=608  
+Program Size: Code=864 RO-data=636 RW-data=0 ZI-data=608  
 FromELF: creating hex file...
-".\Counter.axf" - 0 Error(s), 1 Warning(s).
-e ends without a newline
+".\Counter.axf" - 0 Error(s), 2 Warning(s).
+tement is unreachable
+        return 0;
+main.c: 4 warnings, 0 errors
+compiling portinit.c...
+portinit.h(45): warning:  #1-D: last line of file ends without a newline
   #endif 
 portinit.c: 1 warning, 0 errors
 linking...
-.\Counter.axf: Error: L6200E: Symbol PortA_init multiply defined (by portinit.o and main.o).
-Not enough information to list image symbols.
-Not enough information to list the image map.
-Finished: 2 information, 0 warning and 1 error messages.
-".\Counter.axf" - 1 Error(s), 3 Warning(s).
+Program Size: Code=864 RO-data=636 RW-data=0 ZI-data=608  
+FromELF: creating hex file...
+".\Counter.axf" - 0 Error(s), 5 Warning(s).
+), 5 Warning(s).
 Target not created
