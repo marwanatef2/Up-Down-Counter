@@ -5,7 +5,7 @@ void systick_delay(void)
 {
 	// systick initialization
 	NVIC_ST_CTRL_R = 0 ;
-	NVIC_ST_RELOAD_R = 80000;
+	NVIC_ST_RELOAD_R = 80000-1;
 	NVIC_ST_CURRENT_R = 0;
 	NVIC_ST_CTRL_R |= 0x05;
 	

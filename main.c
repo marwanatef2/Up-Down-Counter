@@ -1,19 +1,22 @@
-#include <stdio.h>
+#include "stdint.h"
 #include "systick.h"
 #include "portinit.h"
 
+
 void SystemInit() {}
 	
-
+	
 int main()
 {
 	PortA_init();
 	PortC_init();
 	PortF_init();
 	
+	
 	// start with 7-segments displaying "0"
 	GPIO_PORTA_DATA_R &= ~(0x0F << 2);
 	GPIO_PORTC_DATA_R &= ~(0x0F << 4);
+	
 	
 	while (1)
 	{
@@ -28,10 +31,12 @@ int main()
 			GPIO_PORTC_DATA_R &= ~(0x0F << 4);
 		}
 		
+		//-------------------------------------------------------------------------------
+		
 		//increment as long as the switch button is pressed
 		while ((GPIO_PORTA_DATA_R&0x40) == 0x40)
 		{
-			// if 1st 7-segment became "9" reset and increment the next 7-segment 
+			// if 1st 7-segment became "9" reset to "0" and increment the next 7-segment 
 			if ((GPIO_PORTA_DATA_R&0x3C) == (0x09 <<2))
 			{
 				GPIO_PORTA_DATA_R &= ~(0x0F << 2);
@@ -46,12 +51,15 @@ int main()
 			delay_milliseconds(200);
 		}
 		
+		//-----------------------------------------------------------------------------
+		
 		//decrement on switch button press
 		if ((GPIO_PORTA_DATA_R&0x80) == 0x80)
 		{
-			//if 1st 7-segment became "0" decrement the next 7-segment
+			//if 1st 7-segment became "0" make it "9" and decrement the next 7-segment
 			if ((GPIO_PORTA_DATA_R&0x3C) == 0)
 			{
+				GPIO_PORTA_DATA_R |= (0x09 << 2);
 				GPIO_PORTC_DATA_R -= (1<<4);
 			}
 			//else decrement 
@@ -64,6 +72,6 @@ int main()
 		}
 	}
 	
-	return 0;
 }
+
 
