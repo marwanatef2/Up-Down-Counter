@@ -3,14 +3,14 @@
 
 #define SYSCTL_RCGCGPIO_R       (*((volatile unsigned long *)0x400FE608))
 
-#define GPIO_PORTC_DATA_R       (*((volatile unsigned long *)0x400063FC))
-#define GPIO_PORTC_DIR_R        (*((volatile unsigned long *)0x40006400))
-#define GPIO_PORTC_AFSEL_R      (*((volatile unsigned long *)0x40006420))
-#define GPIO_PORTC_DEN_R        (*((volatile unsigned long *)0x4000651C))
-#define GPIO_PORTC_LOCK_R       (*((volatile unsigned long *)0x40006520))
-#define GPIO_PORTC_CR_R         (*((volatile unsigned long *)0x40006524))
-#define GPIO_PORTC_AMSEL_R      (*((volatile unsigned long *)0x40006528))
-#define GPIO_PORTC_PCTL_R       (*((volatile unsigned long *)0x4000652C))
+#define GPIO_PORTD_DATA_R       (*((volatile unsigned long *)0x400073FC))
+#define GPIO_PORTD_DIR_R        (*((volatile unsigned long *)0x40007400))
+#define GPIO_PORTD_AFSEL_R      (*((volatile unsigned long *)0x40007420))
+#define GPIO_PORTD_DEN_R        (*((volatile unsigned long *)0x4000751C))
+#define GPIO_PORTD_LOCK_R       (*((volatile unsigned long *)0x40007520))
+#define GPIO_PORTD_CR_R         (*((volatile unsigned long *)0x40007524))
+#define GPIO_PORTD_AMSEL_R      (*((volatile unsigned long *)0x40007528))
+#define GPIO_PORTD_PCTL_R       (*((volatile unsigned long *)0x4000752C))
 	
 #define GPIO_PORTA_DATA_R       (*((volatile unsigned long *)0x400043FC))
 #define GPIO_PORTA_DIR_R        (*((volatile unsigned long *)0x40004400))
@@ -37,7 +37,7 @@
 void PortA_init (void);
 
 //initializes port C pins 4,5,6,7 as general purpose digital output for 2nd 7-segment decoder
-void PortC_init (void);
+void PortD_init (void);
 
 //initializes port F pin 4 "SW 1" as a digital input for the 3rd switch for reset
 void PortF_init (void);

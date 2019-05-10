@@ -16,18 +16,18 @@ void PortA_init (void)
 }
 
 
-void PortC_init (void)
+void PortD_init (void)
 {
 	int x;
-	SYSCTL_RCGCGPIO_R |= 0x04;
+	SYSCTL_RCGCGPIO_R |= 0x08;
 	x=0; // for delay purposes
-	GPIO_PORTC_DIR_R |= 0xF0;
-	GPIO_PORTC_AFSEL_R = 0;
-	GPIO_PORTC_PCTL_R = 0;
-	GPIO_PORTC_AMSEL_R =0;
-	GPIO_PORTC_DEN_R |= 0xF0;
-	GPIO_PORTC_LOCK_R = 0x4C4F434B;
-	GPIO_PORTC_CR_R |= 0xF0;
+	GPIO_PORTD_DIR_R |= 0x0F;
+	GPIO_PORTD_AFSEL_R = 0;
+	GPIO_PORTD_PCTL_R = 0;
+	GPIO_PORTD_AMSEL_R =0;
+	GPIO_PORTD_DEN_R |= 0x0F;
+	GPIO_PORTD_LOCK_R = 0x4C4F434B;
+	GPIO_PORTD_CR_R |= 0x0F;
 }
 
 

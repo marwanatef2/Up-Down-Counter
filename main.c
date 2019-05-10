@@ -9,13 +9,12 @@ void SystemInit() {}
 int main()
 {
 	PortA_init();
-	PortC_init();
+	PortD_init();
 	PortF_init();
-	
-	
+		
 	// start with 7-segments displaying "0"
 	GPIO_PORTA_DATA_R &= ~(0x0F << 2);
-	GPIO_PORTC_DATA_R &= ~(0x0F << 4);
+	GPIO_PORTD_DATA_R &= ~(0x0F << 0);
 	
 	
 	while (1)
@@ -28,7 +27,7 @@ int main()
 			
 			//upon release, reset
 			GPIO_PORTA_DATA_R &= ~(0x0F << 2);
-			GPIO_PORTC_DATA_R &= ~(0x0F << 4);
+			GPIO_PORTD_DATA_R &= ~(0x0F << 0);
 		}
 		
 		//-------------------------------------------------------------------------------
@@ -40,7 +39,7 @@ int main()
 			if ((GPIO_PORTA_DATA_R&0x3C) == (0x09 <<2))
 			{
 				GPIO_PORTA_DATA_R &= ~(0x0F << 2);
-				GPIO_PORTC_DATA_R += (1<<4);
+				GPIO_PORTD_DATA_R += (1<<0);
 			}
 			//else incerement 
 			else {
@@ -60,7 +59,7 @@ int main()
 			if ((GPIO_PORTA_DATA_R&0x3C) == 0)
 			{
 				GPIO_PORTA_DATA_R |= (0x09 << 2);
-				GPIO_PORTC_DATA_R -= (1<<4);
+				GPIO_PORTD_DATA_R -= (1<<0);
 			}
 			//else decrement 
 			else {
